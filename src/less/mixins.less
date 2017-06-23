@@ -1,0 +1,100 @@
+.site-wrapper(@width) {
+  margin: 0 auto;
+  padding: 0;
+  width: @width;
+}
+
+.content-wrapper(@margin-lr) {
+  margin-left: @margin-lr;
+  margin-right: @margin-lr;
+}
+
+.content-wrapper-pad(@padding) {
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+.clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.abs-centrate() {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.abs-centrateY() {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.reset-marg-pad() {
+  margin: 0;
+  padding: 0;
+}
+
+.set-size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.set-font-params(@font-family, @font-size, @line-height, @font-weight) {
+  font-family: @font-family;
+  font-size: @font-size;
+  line-height: @line-height;
+  font-weight: @font-weight;
+}
+
+.menu-item-link() {
+  display: block;
+  .reset-marg-pad();
+  padding-left: 76px;
+  padding-top: 26px;
+  padding-bottom: 28px;
+
+  text-align: left;
+  border-bottom: 1px solid @ui-color-grey;
+  text-decoration: none;
+  color: @font-color-base;
+  .set-font-params(@font-family-header, @font-size-big, 24px, 700);
+
+  &:hover {
+    color: @font-color-base-hover;
+  }
+
+  &:active {
+    color: @font-color-base-active;
+  }
+}
+
+.zigzag-line(@height, @bottom) {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: @bottom;
+
+    display: block;
+    width: 100%;
+    height: @height;
+    background: transparent url("../img/bg-zigzag-line.svg") repeat-x;
+    background-size: contain;
+  }
+}
+
+.zigzag-line-size(@height, @bottom) {
+  &:after {
+    bottom: @bottom;
+    height: @height;
+  }
+}
